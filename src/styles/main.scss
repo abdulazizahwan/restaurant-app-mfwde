@@ -15,7 +15,6 @@ html {
 }
 
 body {
-    font-size: 12px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -64,17 +63,17 @@ $transparentPrimaryRedDarkerColor : #3402054d;
 
 .skip-link {
     position: absolute;
-   top: -40px;
-   left: 0;
-   background-color: $primaryWhite;
-   color: $primaryColor;
-   padding: 8px;
-   z-index: 100;
+    top: -40px;
+    left: 0;
+    background-color: $primaryWhite;
+    color: $primaryColor;
+    padding: 8px;
+    z-index: 100;
 }
 
 .skip-link:focus {
     top: 0;
- }
+}
 
 .label {
     color: $primaryBlack;
@@ -116,6 +115,7 @@ header {
     }
 
     a {
+        min-height: 48px;
         color: $primaryWhite;
     }
 
@@ -129,11 +129,12 @@ header {
 
     li {
         a {
-            display: block;
             padding: 10px 10px;
             text-decoration: none;
             color: $primaryWhite;
             font-size: 14px;
+            display: flex;
+            align-items: center;
 
             &:hover {
                 background-color: $primaryWhite;
@@ -150,6 +151,7 @@ header {
     }
 
     .menu-icon {
+        width: 48px;
         cursor: pointer;
         display: block;
         float: right;
@@ -157,13 +159,15 @@ header {
         position: relative;
         user-select: none;
 
+
         .navicon {
             background: $primaryWhite;
             display: block;
             height: 2px;
             position: relative;
             transition: $primaryWhite .2s ease-out;
-            width: 18px;
+            width: 24px;
+            margin: 0 auto;
 
             &:before {
                 background: $primaryWhite;
@@ -291,12 +295,11 @@ header {
 
     & select {
         width: 200px;
-        height: 32px;
+        min-height: 44px;
         padding: 5px 5px 5px 5px;
         text-transform: uppercase;
         border-radius: 8px;
         border: 1px solid $primaryGrey;
-        margin-bottom: 16px;
 
         @include mobile {
             width: 100%;
@@ -305,6 +308,7 @@ header {
 }
 
 .list-restaurant {
+    margin-top: 24px;
     display: grid;
 
     // width: 100%;
@@ -415,8 +419,8 @@ header {
     transform: scale(1.015);
 }
 
-.footer {
-    padding: 16px;
+footer {
+    padding: 4px 16px;
     background-color: $primaryDarkBlue;
 
     & .content {
@@ -425,12 +429,23 @@ header {
         justify-content: center;
         margin: auto;
         color: $primaryWhite;
+        font-size: 12px;
+    }
+
+    #copyright {
+        height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    #copyright a {
+        height: 44px;
+        display: flex;
+        align-items: center;
     }
 }
 
-@media screen and (min-width: 0px) {
-
-}
+@media screen and (min-width: 0px) {}
 
 @media screen and (min-width: 768px) {
 

@@ -44,7 +44,7 @@ const renderListRestaurant = async (elementId) => {
             <article class="item-restaurant" tabindex="0">
                 <div class="head">
                     <span class="city" aria-label="Kota ${restaurant.city}">${restaurant.city}</span>
-                    <img src="${restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
+                    <img src="${restaurant.pictureId}" alt="Restoran ${restaurant.name}">
                 </div>
                 <div class="body">
                     <span class="title">${restaurant.name}</span>
