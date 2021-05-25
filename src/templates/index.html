@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RestoranQue - Katalog Restoran Terbaik Untuk Anda</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/icons/restaurant-outline.svg" type="image/x-icon">
+    <script src="https://use.fontawesome.com/2802d46b48.js"></script>
+    <style>
+        #page-loader {
+            position: absolute;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            height: 100vh;
+            background-color: #fff;
+        }
+
+        #page-loader div {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#maincontent" class="skip-link">Menuju ke konten</a>
+    <div id="page-loader">
+        <div>Mohon Tunggu Sedang Memuat Halaman...</div>
+    </div>
+
+    <header tabindex="0">
+        <div class="nav container">
+            <a aria-label="go to home" href="/" class="logo"><img id="logo-icon" inline
+                    src="./images/icons/restaurant-outline.svg" alt="Logo RestoranQue">&nbsp;RestoranQue.</a>
+
+
+            <!-- Icon -->
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+
+
+            <ul class="menu">
+                <li tabindex="0"><a href="/">Home</a></li>
+                <li tabindex="0"><a href="#">Favorite</a></li>
+                <li tabindex="0"><a href="https://youtube.com/abdulazizahwanID" target="_blank">About Us</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <section class="hero" tabindex="0">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <div class="caption">
+                    <span>Hari ini makan di Restoran mana ya?</span>
+                    <p>RestoranQue merupakan website yang menyediakan katalog restoran terbaik untuk Anda kunjungi!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="maincontent" tabindex="0">
+        <div class="container">
+            <h1 class="p-1 pt-3 label" tabindex="0">Explore Restaurant</h1>
+
+            <div class="p-1">
+                <div class="filter-restaurant">
+                    <div>
+                        <label for="kota">Pilih Kota</label>
+                        <select name="kota" id="kota">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="list-restaurant" id="list-restaurant"></div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" tabindex="0">
+        <div class="content">
+            <span id="copyright"></span>
+            <script>
+                document.querySelector("#copyright").innerHTML =
+                    `&copy; Copyright Abdul Aziz Ahwan ${(new Date).getFullYear()} - <strong><a href="/">RestoranQue.</a></strong>`
+            </script>
+        </div>
+    </footer>
+</body>
+
+</html>
