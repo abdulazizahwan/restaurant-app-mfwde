@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>RestoranQue - Katalog Restoran Terbaik Untuk Anda</title>
+    <title>RestoranQue. - Katalog Restoran Terbaik Untuk Anda</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/icons/restaurant-outline.svg" type="image/x-icon">
@@ -29,33 +29,48 @@
     <div id="page-loader">
         <div>Mohon Tunggu Sedang Memuat Halaman...</div>
     </div>
-
-    <header tabindex="0">
-        <div class="nav container">
-            <a aria-label="go to home" href="/" class="logo"><img id="logo-icon" inline
-                    src="./images/icons/restaurant-outline.svg" alt="Logo RestoranQue">&nbsp;RestoranQue.</a>
-
-
-            <!-- Icon -->
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-
-
-            <ul class="menu">
-                <li tabindex="0"><a href="/">Home</a></li>
-                <li tabindex="0"><a href="#">Favorite</a></li>
-                <li tabindex="0"><a href="https://youtube.com/abdulazizahwanID" target="_blank">About Us</a></li>
+    <nav class="navbar">
+        <div class="navbar-wrapper">
+            <div class="logo">
+                <a href="/">
+                    <img id="logo-icon" inline src="./images/icons/restaurant-outline.svg" alt="Logo RestoranQue.">
+                    <span>RestoranQue.</span></a>
+            </div>
+            <ul class="navbar-list" id="nav">
+                <li class="nav-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Favorite</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://youtube.com/abdulazizahwanID">About Us</a>
+                </li>
             </ul>
-
+            <button id="menu-toggle-container" aria-label="Tampilkan Menu Mobile" tabindex="0" role="button">
+                <span id="menu-toggle">
+                    <span></span>
+                </span>
+            </button>
         </div>
-    </header>
+    </nav>
+    <div class="mobile-nav" aria-hidden="true">
+        <div class="mobile-nav-content">
+            <hr class="mb-2">
+            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="#" class="mobile-nav-link">Favorite</a>
+            <a href="https://youtube.com/abdulazizahwanID" class="mobile-nav-link">About Us</a>
+            <hr class="mt-2">
+        </div>
+    </div>
+
 
     <section class="hero" tabindex="0">
         <div class="hero-overlay">
             <div class="hero-content">
                 <div class="caption">
                     <span>Hari ini makan di Restoran mana ya?</span>
-                    <p>RestoranQue merupakan website yang menyediakan katalog restoran terbaik untuk Anda kunjungi!
+                    <p>RestoranQue. merupakan website yang menyediakan katalog restoran terbaik untuk Anda kunjungi!
                     </p>
                 </div>
             </div>

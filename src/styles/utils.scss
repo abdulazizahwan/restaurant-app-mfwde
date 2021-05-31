@@ -22,4 +22,8 @@ $gap : 1rem;
     .mb-#{$i} {
         margin-bottom: $gap * $i;
     }
+
+    .mt-#{$i} {
+        margin-top: $gap * $i;
+    }
 }
