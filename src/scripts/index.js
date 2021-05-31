@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector("#page-loader").remove();
     const menuToggle = document.querySelector("#menu-toggle-container");
-    const nav = document.querySelector("#nav");
     const mobileNav = document.querySelector(".mobile-nav")
 
     const menuToggler = () => {
