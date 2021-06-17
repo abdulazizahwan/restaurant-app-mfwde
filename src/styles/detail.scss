@@ -1,0 +1,136 @@
+.detail-content{
+    display: grid;
+    & p.description{
+        line-height: 1.7rem;
+        font-weight: 300;
+        font-size: 1rem;
+    }
+}
+
+.sub-title{
+    font-size: 2rem;
+    color: $primaryBlack;
+}
+
+.menu-container{
+    display: grid;
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+
+    & div.menu-item{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin-right: 24px;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        background: $primaryWhite;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include tablet {
+            display: block;
+            padding-top: 0;
+            padding-left: 0;
+            padding-right: 0;;
+        }
+
+        & img{
+            width: 128px;
+            height: 72px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            @include tablet {
+                width: 100%;
+                height: 128px;
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: unset;
+                border-bottom: 1px solid #eee;
+            }
+
+        }
+        & span {
+            margin-left: 5px;
+            @include tablet {
+                margin-left: unset;
+            }
+            display: inline-block;
+            color: $primaryBlack;
+            font-weight: 400;
+            font-size: 1.2rem;
+            padding: 16px 8px;
+        }
+    }
+}
+
+.review-restoran-container{
+    display: block;
+    @include tablet {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+    }
+    & div.list-review {
+        @include tablet {
+            margin-right: 8px;
+            max-height: 500px;
+            overflow: scroll;
+        }
+
+        & div.review-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            & .fa-user {
+                font-size: 16pt;
+                border-radius: 50%;
+                border: 1px solid $primaryLightGrey;
+                padding: 9.5px 12px;
+            }
+
+            & div.text-review {
+                margin-left: 8px;
+                margin-right: 16px;
+                padding: 8px;
+                border-radius: 8px;
+                border: 1px solid $primaryLightGrey;
+                width: 100%;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+                & p {
+                    font-size: 12pt;
+                    overflow-wrap: anywhere;
+                    color:$primaryBlack;
+                }
+                & span {
+                    display: block;
+                    margin-top: 8px;
+                    font-size: 9pt;
+                    color: $primaryGrey;
+                }
+            }
+        }
+    }
+
+    & div.form-review-container {
+        @include tablet {
+            margin-left: 8px;
+        }
+        p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+}

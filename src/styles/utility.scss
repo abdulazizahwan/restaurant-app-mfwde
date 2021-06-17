@@ -1,0 +1,199 @@
+$gap : 0.5rem;
+$size : 8px;
+$devices : "",
+"tablet:",
+"desktop";
+
+
+@mixin gapAndSize ($gap, $size, $prefix) {
+    @for $i from 1 through 8 {
+        .#{$prefix}p-#{$i} {
+            padding: $gap * $i !important;
+        }
+
+        .#{$prefix}px-#{$i} {
+            padding-left: $gap * $i !important;
+            padding-right: $gap * $i !important;
+        }
+
+        .#{$prefix}py-#{$i} {
+            padding-top: $gap * $i !important;
+            padding-bottom: $gap * $i !important;
+        }
+
+        .#{$prefix}pt-#{$i} {
+            padding-top: $gap * $i !important;
+        }
+        .#{$prefix}pl-#{$i} {
+            padding-left: $gap * $i !important;
+        }
+        .#{$prefix}pr-#{$i} {
+            padding-right: $gap * $i !important;
+        }
+
+        .#{$prefix}pb-#{$i} {
+            padding-bottom: $gap * $i !important;
+        }
+
+        .#{$prefix}mb-#{$i} {
+            margin-bottom: $gap * $i !important;
+        }
+        .#{$prefix}m-#{$i} {
+            margin: $gap * $i !important;
+        }
+
+        .#{$prefix}mt-#{$i} {
+            margin-top: $gap * $i !important;
+        }
+        .#{$prefix}mr-#{$i} {
+            margin-right: $gap * $i !important;
+        }
+
+        .#{$prefix}size-#{$i} {
+            height: auto !important;
+            width: $size * $i !important;
+        }
+
+        .#{$prefix}size-width-#{$i} {
+            width: $size * $i !important;
+        }
+
+        .#{$prefix}size-height-#{$i} {
+            height: $size * $i !important;
+        }
+
+
+    }
+
+    @if $prefix=="" {
+        .#{$prefix}p-none {
+            padding: none;
+        }
+
+        .#{$prefix}px-none {
+            padding-left: none;
+            padding-right: none;
+        }
+
+        .#{$prefix}py-none {
+            padding-top: none;
+            padding-bottom: none;
+        }
+
+        .#{$prefix}pt-none {
+            padding-top: none;
+        }
+
+
+        .#{$prefix}pb-none {
+            padding-bottom: none;
+        }
+
+        .#{$prefix}mb-none {
+            margin-bottom: none;
+        }
+
+        .#{$prefix}size-none {
+            height: auto;
+            width: none;
+        }
+
+        .#{$prefix}size-width-none {
+            width: none;
+        }
+
+        .#{$prefix}size-height-none {
+            height: none;
+        }
+
+    }
+}
+
+@include gapAndSize($gap, $size, "");
+
+@include tablet {
+    @include gapAndSize($gap, $size, "tablet\\:");
+}
+
+@include desktop {
+    @include gapAndSize($gap, $size, "desktop\\:");
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.rounded {
+    border-radius: $size;
+}
+
+.text-white{
+    color: $primaryWhite;
+}
+
+.text-black{
+    color: $primaryGrey;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.bg-white{
+    background: $primaryWhite;
+}
+
+.inline-block{
+    display: inline-block;
+}
+.block{
+    display: block;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px 8px;
+    border: 1px solid $primaryLightGrey;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+form {
+    & label {
+        font-weight: 400;
+    }
+}
+
+.input-container {
+    margin-bottom: 16px;
+    & label {
+        display: block;
+        margin-bottom: 8px;
+    }
+}
+
+.bg-primary {
+    background: $primaryDarkBlue;
+}
+
+.outline-white {
+    border:1px solid $primaryWhite;
+}

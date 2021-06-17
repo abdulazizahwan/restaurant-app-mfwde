@@ -22,7 +22,6 @@ body {
 .container {
     max-width: 1040px;
     margin: auto;
-
 }
 
 a {
@@ -52,6 +51,7 @@ a {
 // Color assets
 $primaryWhite : #ffffff;
 $primaryColor : #c9141d;
+$primaryDarkColor : #9e0911;
 $primaryRed : #E62E02;
 $primaryBlack : #141414;
 $primaryGrey : #5d5d5d;
@@ -60,6 +60,7 @@ $primaryYellow : #ffc800;
 $primaryDarkBlue : #2b2d42;
 
 $transparentPrimaryRedDarkerColor : #3402054d;
+$transparentPrimaryDarkBlue : #2b2d4294;
 
 .skip-link {
     position: absolute;
@@ -166,13 +167,13 @@ $transparentPrimaryRedDarkerColor : #3402054d;
 
                 &::after {
                     transform: rotate(-45deg);
-                    background: #fff;
+                    background: $primaryWhite;
                     margin-top: 0;
                 }
 
                 &::before {
                     margin-top: 0;
-                    background: #fff;
+                    background: $primaryWhite;
                     transform: rotate(45deg);
                 }
             }
@@ -238,12 +239,25 @@ $transparentPrimaryRedDarkerColor : #3402054d;
         min-height: inherit;
         background-color: $transparentPrimaryRedDarkerColor;
         height: 100%;
+
+        &-darker {
+            background-color: $transparentPrimaryDarkBlue;
+        }
+    }
+
+    &-blur {
+        backdrop-filter: blur(4px);
     }
 
     &-content {
         max-width: 1040px;
         margin: auto;
         padding: 32px;
+
+        @include tablet {
+            padding: 64px;
+        }
+
         color: $primaryWhite;
 
         @include desktop {
@@ -258,13 +272,67 @@ $transparentPrimaryRedDarkerColor : #3402054d;
             & span {
                 font-weight: 800;
                 font-size: 3rem;
-                line-height: 1;
             }
 
             & p {
                 margin-top: 25px;
-                font-size: 14px;
             }
+        }
+
+        & .resto-caption {
+            display: block;
+            flex-direction: column;
+
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            justify-items: flex-start;
+
+            & .image-container {
+                @include tablet {
+                    padding: 0px 22px;
+                    width: 50%;
+                }
+
+                & img {
+                    width: 100%;
+                    margin-bottom: 25px;
+                    aspect-ratio: 4/3;
+
+                    @include tablet {
+                        width: 100%;
+                        margin-bottom: 0;
+                    }
+
+                    border-radius: 3%;
+                    -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+                    -moz-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    /* Firefox 3.5 - 3.6 */
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                }
+            }
+
+            & .text-container {
+                @include tablet {
+                    width: 50%;
+                }
+
+                h1 {
+                    font-weight: 700;
+                    font-size: 2rem;
+                }
+
+                @include desktop {
+                    & .rating-item {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
         }
 
     }
@@ -318,7 +386,7 @@ $transparentPrimaryRedDarkerColor : #3402054d;
         display: block;
         width: auto;
         margin: 10px;
-        border-radius: 3% 3% 3% 3%;
+        border-radius: 3%;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
         & .head {
@@ -365,38 +433,29 @@ $transparentPrimaryRedDarkerColor : #3402054d;
             }
 
 
-            & .ratings {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                & .restaurant-stars {
-                    color: $primaryYellow;
-                    margin-bottom: 5px;
-                    font-size: 12pt;
-
-                    & i {
-                        color: inherit;
-                    }
-
-                    ;
-
-                    & span {
-                        color: $primaryBlack;
-                        font-size: 8pt;
-                    }
-                }
-
-                & span {
-                    font-weight: 400;
-                    font-size: 16pt;
-                }
-            }
-
             & p {
                 line-height: 180%;
                 font-size: 10pt;
                 color: $primaryGrey;
+            }
+        }
+
+        & .footer {
+            display: flex;
+            border-top: 1px solid #eee;
+            justify-content: space-between;
+
+            & div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 500;
+                text-align: center;
+                width: 50%;
+
+                &:nth-of-type(odd) {
+                    border-right: 1px solid #eee;
+                }
             }
         }
     }
@@ -407,6 +466,34 @@ $transparentPrimaryRedDarkerColor : #3402054d;
     cursor: pointer;
     transition: all 100ms ease-in;
     transform: scale(1.015);
+}
+
+.ratings {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+
+    & .restaurant-stars {
+        color: $primaryYellow;
+        margin-bottom: 5px;
+        font-size: 14pt;
+
+        & i {
+            color: inherit;
+        }
+
+        ;
+
+        & span {
+            color: $primaryBlack;
+            font-size: 8pt;
+        }
+    }
+
+    & span {
+        font-weight: 400;
+        font-size: 16pt;
+    }
 }
 
 footer {
@@ -515,5 +602,44 @@ footer {
 
     .mobile-nav {
         display: none;
+    }
+}
+
+@import "./utility.scss";
+@import "./page-loader.scss";
+@import "./detail.scss";
+@import "./component.scss";
+
+button.restaurant-save-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:active {
+        & span.item {
+            font-size: 1.2rem;
+            padding-top: 2px;
+        }
+    }
+}
+
+.clickable {
+
+    pointer-events: none;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in;
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    padding: 22px;
+    font-weight: 400;
+
+    &:hover {
+        padding-top: 25px;
+        padding-bottom: 19px;
+    }
+
+    &-active {
+        color: $primaryColor
     }
 }

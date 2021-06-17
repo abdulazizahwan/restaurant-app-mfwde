@@ -1,45 +1,31 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
-import '../styles/utils.scss';
 
-const app = require('./app');
+import App from './app';
+import swRegister from './utils/sw-register';
 
-console.log('Hello Coders! :)');
+const app = new App({
+  button: document.querySelector('#menu-toggle-container'),
+  drawer: document.querySelector('.mobile-nav'),
+  content: document.querySelector('#mainContent'),
+});
 
 window.app = app;
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('#page-loader').remove();
-  const menuToggle = document.querySelector('#menu-toggle-container');
-  const nav = document.querySelector('#nav');
-  const mobileNav = document.querySelector('.mobile-nav');
-
-  const menuToggler = () => {
-    const toggler = menuToggle.querySelector('span');
-
-    // eslint-disable-next-line no-unused-expressions
-    toggler.classList.contains('active')
-      ? toggler.classList.remove('active')
-            || nav.classList.remove('navbar-list-mobile')
-            || mobileNav.classList.remove('mobile-nav-active')
-      : toggler.classList.add('active')
-            || nav.classList.add('navbar-list-mobile')
-            || mobileNav.classList.add('mobile-nav-active');
-  };
-
-  menuToggle.addEventListener('click', menuToggler);
-
-  mobileNav.addEventListener('click',
-    e => e.target !== undefined
-        && e.target.classList.contains('mobile-nav-link')
-        && menuToggler());
-
-  app.renderListRestaurant('#list-restaurant');
-
-  const select = document.querySelector('select#kota');
-
-  select.addEventListener('change', () => {
-    const selectedCity = document.querySelector('select#kota').selectedOptions[0].value || null;
-    window.cityFilter = selectedCity;
-    app.renderListRestaurant('#list-restaurant');
-  });
+window.addEventListener('hashchange', () => {
+  app.renderPage();
 });
+
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
+});
+
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', () => {
+//     navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+//       console.log('SW registered: ', registration);
+//     }).catch((registrationError) => {
+//       console.log('SW registration failed: ', registrationError);
+//     });
+//   });
+// }

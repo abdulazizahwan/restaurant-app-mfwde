@@ -42,6 +42,8 @@
   },
   "dependencies": {
     "html-webpack-inline-svg-plugin": "^2.3.0",
-    "regenerator-runtime": "^0.13.5"
+    "idb": "^6.1.2",
+    "regenerator-runtime": "^0.13.5",
+    "serviceworker-webpack-plugin": "^1.0.1"
   }
 }
