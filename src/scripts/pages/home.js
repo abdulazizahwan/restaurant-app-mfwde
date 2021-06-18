@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import CONFIG from '../globals/config';
 import FavoriteRestoIdb from '../data/favoriteresto-idb';
 import RestoDBSource from '../data/therestodb-source';
@@ -27,10 +28,10 @@ const Home = {
             <div class="container" id="content" tabindex="0">
                 <h1 class="p-1 pl-2 pt-2" tabindex="0">Explore Restaurant</h1>
 
+
                 <div class="p-1">
                     <div class="list-restaurant" id="list-restaurant"></div>
                     <div id="list-restaurant-zero"></div>
-
                 </div>
             </div>
         `;
@@ -45,6 +46,13 @@ const Home = {
 
     const elm = this.container.querySelector('#list-restaurant');
 
+    const restaurants = this.restaurans;
+
+    if (restaurants.length === 0) {
+      this.container.querySelector('#list-restaurant-zero').innerHTML = this.notAvailableMessage();
+      return;
+    }
+
     const summarizeText = (text, limit = null) => {
       if (text.length <= 0) return '';
 
@@ -58,14 +66,6 @@ const Home = {
       }...`;
     };
 
-    const restaurants = this.restaurans;
-
-    if (restaurants.length === 0) {
-      this.container.querySelector('#list-restaurant-zero').innerHTML = this.notAvailableMessage();
-      return;
-    }
-
-    // eslint-disable-next-line max-len
     const saved = await FavoriteRestoIdb.checkIsSaved(restaurants.map((item) => item.id));
     elm.innerHTML = restaurants.map((restaurant) => {
       if (cityFilterKeyword !== null && cityFilterKeyword !== 'Semua Kota' && restaurant.city !== cityFilterKeyword) {
