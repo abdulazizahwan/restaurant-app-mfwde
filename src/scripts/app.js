@@ -5,7 +5,11 @@ import Utility from './globals/utility';
 import FavRestoButton from './components/fav-resto-button';
 
 class App {
-  constructor({ button, drawer, content }) {
+  constructor({
+    button,
+    drawer,
+    content,
+  }) {
     this.button = button;
     this.drawer = drawer;
     this.content = content;
@@ -14,7 +18,11 @@ class App {
   }
 
   initialAppShell() {
-    const { button, drawer, content } = this;
+    const {
+      button,
+      drawer,
+      content,
+    } = this;
     DrawerInitiator.init({
       button,
       drawer,
@@ -35,7 +43,7 @@ class App {
     try {
       await page.afterRender();
       window.scrollTo(0, 0);
-    // eslint-disable-next-line no-empty
+      // eslint-disable-next-line no-empty
     } catch (e) {}
 
     Utility.hideLoadingOverLay();

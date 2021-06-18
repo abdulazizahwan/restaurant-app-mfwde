@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="./images/icons/restaurant-outline.svg" type="image/x-icon">
     <link rel="apple-touch-icon" href="./images/icons/app/icon-192x192.png">
     <script src="https://use.fontawesome.com/2802d46b48.js"></script>
-    <meta name="theme-color" content="#c9141d"/>
+    <meta name="theme-color" content="#c9141d" />
     <link rel="manifest" href="manifest.json">
     <style>
         #pageLoader {
@@ -25,7 +25,7 @@
             transition: all .5s ease-out;
         }
 
-        #pageLoader > div {
+        #pageLoader>div {
             margin: auto;
             display: flex;
             flex-direction: column;
@@ -33,17 +33,19 @@
             align-items: center;
             text-align: center;
         }
+
         .pageLoader-hidden {
-            overflow:hidden;
-            height:0;
+            overflow: hidden;
+            height: 0;
             padding: 0 18px;
-            width:100px;
+            width: 100px;
             animation-name: hiding;
             animation-duration: 0.5s;
             display: none;
             opacity: 0;
             z-index: -1 !important;
         }
+
         @keyframes hiding {
             from {
                 opacity: 1;

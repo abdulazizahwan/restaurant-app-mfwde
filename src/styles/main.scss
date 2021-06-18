@@ -470,7 +470,7 @@ $transparentPrimaryDarkBlue : #2b2d4294;
 
 .ratings {
     display: flex;
-    justify-content:left;
+    justify-content: left;
     align-items: center;
 
     & .restaurant-stars {
@@ -493,7 +493,7 @@ $transparentPrimaryDarkBlue : #2b2d4294;
 
     & span {
         font-weight: 400;
-        font-size: 16pt;
+        font-size: 14pt;
     }
 }
 
@@ -529,10 +529,6 @@ footer {
             display: none;
         }
 
-        // &-list-mobile{
-        //     display: block;
-        //     position: absolute;
-        // }
         & #menu-toggle-container {
             display: block;
         }
@@ -606,7 +602,7 @@ footer {
     }
 }
 
-@import "./utility.scss";
+@import "./utils.scss";
 @import "./page-loader.scss";
 @import "./detail.scss";
 @import "./component.scss";

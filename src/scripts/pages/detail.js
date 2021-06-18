@@ -195,9 +195,8 @@ const Detail = {
   initListener() {
     this.container.querySelector('form').addEventListener('submit', (e) => {
       e.preventDefault();
-      // const payload = Object.fromEntries(new FormData(this));
       // eslint-disable-next-line no-alert
-      alert('Fitur ini belum tersedia');
+      alert('Saat ini fitur belum tersedia');
     });
   },
 };

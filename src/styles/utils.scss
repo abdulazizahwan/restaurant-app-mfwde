@@ -24,9 +24,11 @@ $devices : "",
         .#{$prefix}pt-#{$i} {
             padding-top: $gap * $i !important;
         }
+
         .#{$prefix}pl-#{$i} {
             padding-left: $gap * $i !important;
         }
+
         .#{$prefix}pr-#{$i} {
             padding-right: $gap * $i !important;
         }
@@ -38,6 +40,7 @@ $devices : "",
         .#{$prefix}mb-#{$i} {
             margin-bottom: $gap * $i !important;
         }
+
         .#{$prefix}m-#{$i} {
             margin: $gap * $i !important;
         }
@@ -45,6 +48,7 @@ $devices : "",
         .#{$prefix}mt-#{$i} {
             margin-top: $gap * $i !important;
         }
+
         .#{$prefix}mr-#{$i} {
             margin-right: $gap * $i !important;
         }
@@ -144,30 +148,32 @@ $devices : "",
     border-radius: $size;
 }
 
-.text-white{
+.text-white {
     color: $primaryWhite;
 }
 
-.text-black{
+.text-black {
     color: $primaryGrey;
 }
 
-.text-center{
+.text-center {
     text-align: center;
 }
 
-.bg-white{
+.bg-white {
     background: $primaryWhite;
 }
 
-.inline-block{
+.inline-block {
     display: inline-block;
 }
-.block{
+
+.block {
     display: block;
 }
 
-input[type="text"], textarea {
+input[type="text"],
+textarea {
     width: 100%;
     padding: 8px 8px;
     border: 1px solid $primaryLightGrey;
@@ -184,6 +190,7 @@ form {
 
 .input-container {
     margin-bottom: 16px;
+
     & label {
         display: block;
         margin-bottom: 8px;
@@ -195,5 +202,5 @@ form {
 }
 
 .outline-white {
-    border:1px solid $primaryWhite;
+    border: 1px solid $primaryWhite;
 }
