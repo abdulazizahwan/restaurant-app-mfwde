@@ -6,15 +6,13 @@ import RestoDBSource from '../data/therestodb-source';
 const Home = {
   container: null,
   clickListener: null,
-  restaurants: null,
+  restaurans: null,
   init(container) {
     this.container = container;
   },
   async render() {
-    const {
-      restaurants,
-    } = await RestoDBSource.getListRestaurant();
-    this.restaurants = restaurants;
+    const { restaurants } = await RestoDBSource.getListRestaurant();
+    this.restaurans = restaurants;
     return `
             <section class="hero home-jumbotron with-default-bg" tabindex="0">
                 <div class="hero-overlay">
@@ -48,9 +46,7 @@ const Home = {
 
     const elm = this.container.querySelector('#list-restaurant');
 
-    const {
-      restaurants,
-    } = this;
+    const restaurants = this.restaurans;
 
     if (restaurants.length === 0) {
       this.container.querySelector('#list-restaurant-zero').innerHTML = this.notAvailableMessage();
