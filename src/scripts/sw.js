@@ -7,7 +7,7 @@ const {
 } = global.serviceWorkerOption;
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(CacheHelper.cachingAppShell([...assets, './'], 'https://use.fontawesome.com'));
+  event.waitUntil(CacheHelper.cachingAppShell([...assets, './']));
 });
 
 self.addEventListener('activate', (event) => {
