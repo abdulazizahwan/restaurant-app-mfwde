@@ -52,13 +52,25 @@ const Detail = {
       id, name, address, city, categories, rating, imagesUrl,
     } = this.data.restaurant;
     const element = this.container.firstElementChild;
-    element.style.backgroundImage = `url("${imagesUrl.large}")`;
+
+    if (window.matchMedia('(max-width: 425px)').matches) {
+      element.style.backgroundImage = `url("${imagesUrl.small}")`;
+    } else if (window.matchMedia('(max-width: 1024px)').matches) {
+      element.style.backgroundImage = `url("${imagesUrl.medium}")`;
+    } else {
+      element.style.backgroundImage = `url("${imagesUrl.large}")`;
+    }
+
     const isSaved = (await FavoriteRestoIdb.checkIsSaved(id))[id] || false;
     const content = element.querySelector('.hero-content');
     content.innerHTML = `
                 <div class="resto-caption">
                     <div class="image-container">
-                        <img class="lazyload" data-src="${imagesUrl.medium}" tabindex="0">
+                        <picture tabindex="0" alt="${name}">
+                            <source media="(max-width: 425px)" srcset="${imagesUrl.small}">
+                            <source media="(min-width: 425px)" srcset="${imagesUrl.medium}">
+                            <img class="lazyload" data-src="${imagesUrl.medium}" alt="${name}"></img>
+                        </picture>
                     </div>
                     <div class="desktop:pl-1 text-container">
                         <div>
