@@ -75,7 +75,7 @@ const Home = {
             <article class="item-restaurant">
                 <div class="head">
                     <span class="city" aria-label="Kota ${restaurant.city}" tabindex="0">${restaurant.city}</span>
-                    <img  tabindex="0" src="${CONFIG.BASE_IMAGE_URL.medium}${restaurant.pictureId}" alt="restoran ${restaurant.name}">
+                    <img class="lazyload" tabindex="0" data-src="${CONFIG.BASE_IMAGE_URL.medium}${restaurant.pictureId}" alt="restoran ${restaurant.name}">
                 </div>
                 <div class="body">
                     <span class="title"  tabindex="0">${restaurant.name}</span>

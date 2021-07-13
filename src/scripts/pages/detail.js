@@ -2,6 +2,7 @@
 import UrlParser from '../routes/url-parser';
 import RestoDBSource from '../data/therestodb-source';
 import FavoriteRestoIdb from '../data/favoriteresto-idb';
+import CONFIG from '../globals/config';
 
 const Detail = {
   container: null,
@@ -57,7 +58,7 @@ const Detail = {
     content.innerHTML = `
                 <div class="resto-caption">
                     <div class="image-container">
-                        <img src="${imagesUrl.medium}" tabindex="0">
+                        <img class="lazyload" data-src="${imagesUrl.medium}" tabindex="0">
                     </div>
                     <div class="desktop:pl-1 text-container">
                         <div>
@@ -171,7 +172,7 @@ const Detail = {
                 Berikan ulasan Anda tentang restoran ini
             </p>
 
-            <form class="mt-1" method="POST">
+            <form class="mt-1" method="POST" id="formReview">
                 <div class="input-container">
                     <label for="#name">
                         Nama
@@ -196,7 +197,36 @@ const Detail = {
     this.container.querySelector('form').addEventListener('submit', (e) => {
       e.preventDefault();
       // eslint-disable-next-line no-alert
-      alert('Saat ini fitur belum tersedia');
+
+      // Fetch POST Review
+      const name = document.getElementById('name').value;
+      const review = document.getElementById('review').value;
+
+      const dataJSON = {
+        id: this.restoId,
+        name: `${name}`,
+        review: `${review}`,
+      };
+
+      fetch(`${CONFIG.BASE_URL}review`, {
+        method: 'POST',
+        body: JSON.stringify(dataJSON),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'X-Auth-Key': 12345,
+        },
+      }).then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          if (json.error === false) {
+            // For wait 3 seconds
+            setTimeout(() => {
+              // eslint-disable-next-line no-restricted-globals
+              location.reload(); // Refresh page
+            }, 3000);
+          }
+        })
+        .catch((err) => console.log(err));
     });
   },
 };

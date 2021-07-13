@@ -107,6 +107,7 @@ $transparentPrimaryDarkBlue : #2b2d4294;
 
             & #logo-icon {
                 height: 30px;
+                width: 30px;
                 vertical-align: middle;
             }
 
@@ -222,7 +223,6 @@ $transparentPrimaryDarkBlue : #2b2d4294;
 
 // Hero Element
 .hero {
-    background-image: url('../public/images/heros/hero-image_2.jpg');
     margin: auto;
     transition: 0.25s ease-out all;
     min-height: 500px;
@@ -231,6 +231,18 @@ $transparentPrimaryDarkBlue : #2b2d4294;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include mobile {
+        background-image: url('/images/hero-image-small.jpg');
+    }
+
+    @include tablet {
+        background-image: url('/images/hero-image-large.jpg');
+    }
+
+    @include desktop {
+        background-image: url('/images/hero-image-xl.jpg');
+    }
 
     &-overlay {
         display: flex;
