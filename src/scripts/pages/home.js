@@ -75,7 +75,11 @@ const Home = {
             <article class="item-restaurant">
                 <div class="head">
                     <span class="city" aria-label="Kota ${restaurant.city}" tabindex="0">${restaurant.city}</span>
-                    <img class="lazyload" tabindex="0" data-src="${CONFIG.BASE_IMAGE_URL.medium}${restaurant.pictureId}" alt="restoran ${restaurant.name}">
+                    <picture tabindex="0" alt="${restaurant.name}" class="lazyload">
+                        <source media="(max-width: 425px)" srcset="${CONFIG.BASE_IMAGE_URL.small}${restaurant.pictureId}
+                        <source media="(min-width: 425px)" srcset="${CONFIG.BASE_IMAGE_URL.medium}${restaurant.pictureId}">
+                        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL.small}${restaurant.pictureId}" alt="${restaurant.name}"></img>
+                    </picture>
                 </div>
                 <div class="body">
                     <span class="title"  tabindex="0">${restaurant.name}</span>
