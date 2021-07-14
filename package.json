@@ -8,7 +8,8 @@
     "build": "webpack --config webpack.prod.js",
     "build-image": "node sharp.js",
     "test": "karma start",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
   "author": "Abdul Aziz Ahwan <abdulazizahwan97@gmail.com>",

@@ -34,7 +34,7 @@ const Favorite = {
             <div class="flex justify-center pt-3 pb-3">
                 <div class="block text-center">
                     <i class="fas fa-frown fa-3x block"></i>
-                    <p class"mt-1">Daftar <strong>Restoran Favorit</strong> anda masih kosong. ☹️</p>
+                    <p class"mt-1">Daftar Restoran Favorit anda masih kosong.</p>
                 </div>
             </div>
         `;
