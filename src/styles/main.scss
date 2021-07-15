@@ -512,14 +512,14 @@ $transparentPrimaryDarkBlue : #2b2d4294;
 
 footer {
     padding: 4px 16px;
-    background-color: $primaryDarkBlue;
+    background-color: $primaryWhite;
 
     & .content {
         max-width: 1040px;
         display: flex;
         justify-content: center;
         margin: auto;
-        color: $primaryWhite;
+        color: $primaryDarkBlue;
         font-size: 12px;
     }
 
