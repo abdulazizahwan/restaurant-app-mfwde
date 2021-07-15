@@ -206,7 +206,7 @@ const Detail = {
   },
 
   initListener() {
-    this.container.querySelector('form').addEventListener('submit', (e) => {
+    this.container.querySelector('form').addEventListener('submit', async (e) => {
       e.preventDefault();
       // eslint-disable-next-line no-alert
 
@@ -220,7 +220,7 @@ const Detail = {
         review: `${review}`,
       };
 
-      fetch(`${CONFIG.BASE_URL}review`, {
+      await fetch(`${CONFIG.BASE_URL}review`, {
         method: 'POST',
         body: JSON.stringify(dataJSON),
         headers: {
