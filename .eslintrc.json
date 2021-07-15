@@ -20,6 +20,7 @@
                 ]
             }
         ],
-        "no-console": "off"
+        "no-console": "off",
+        "no-empty": ["error", { "allowEmptyCatch": true }]
     }
 }
