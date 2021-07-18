@@ -12,52 +12,6 @@
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
     <meta name="theme-color" content="#c9141d" />
     <link rel="manifest" href="manifest.json">
-    <style>
-        #pageLoader {
-            position: absolute;
-            width: 100%;
-            margin: auto;
-            display: flex;
-            height: 100vh;
-            background-color: rgba(255, 255, 255, 0.663);
-            z-index: 9;
-            -webkit-transition: all .5s ease-out;
-            -moz-transition: all .5s ease-out;
-            transition: all .5s ease-out;
-        }
-
-        #pageLoader>div {
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .pageLoader-hidden {
-            overflow: hidden;
-            height: 0;
-            padding: 0 18px;
-            width: 100px;
-            animation-name: hiding;
-            animation-duration: 0.5s;
-            display: none;
-            opacity: 0;
-            z-index: -1 !important;
-        }
-
-        @keyframes hiding {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 0;
-                display: none;
-            }
-        }
-    </style>
 </head>
 
 <body>
