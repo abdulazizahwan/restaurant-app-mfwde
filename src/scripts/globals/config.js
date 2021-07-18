@@ -6,7 +6,7 @@ const CONFIG = {
     large: 'https://restaurant-api.dicoding.dev/images/large/',
   },
   DEFAULT_LANGUAGE: 'en-us',
-  CACHE_NAME: new Date().toISOString(),
+  CACHE_NAME: 'RestoranQue-V1',
   generateImageUrlObject(pictureId) {
     return {
       small: `${this.BASE_IMAGE_URL.small}${pictureId}`,
