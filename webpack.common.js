@@ -4,6 +4,8 @@ const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+// eslint-disable-next-line prefer-destructuring
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 
 module.exports = {
@@ -89,5 +91,6 @@ module.exports = {
         }),
       ],
     }),
+    new BundleAnalyzerPlugin(),
   ],
 };
